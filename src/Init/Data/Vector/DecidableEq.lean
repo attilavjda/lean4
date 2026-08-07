@@ -28,7 +28,7 @@ theorem isEqv_eq_decide (xs ys : Vector α n) (r) :
   rcases ys with ⟨ys, h⟩
   simp -implicitDefEqProofs [Array.isEqv_eq_decide, h]
 
-@[simp] theorem isEqv_toArray [BEq α] (xs ys : Vector α n) : (xs.toArray.isEqv ys.toArray r) = (xs.isEqv ys r) := by
+@[simp] theorem isEqv_toArray (xs ys : Vector α n) : (xs.toArray.isEqv ys.toArray r) = (xs.isEqv ys r) := by
   simp [isEqv_eq_decide, Array.isEqv_eq_decide]
 
 theorem eq_of_isEqv [DecidableEq α] (xs ys : Vector α n) (h : Vector.isEqv xs ys (fun x y => x = y)) : xs = ys := by

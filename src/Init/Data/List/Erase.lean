@@ -498,7 +498,7 @@ theorem erase_eq_iff [LawfulBEq α] {a : α} {l : List α} :
   simp_all
 
 @[grind ←]
-theorem Pairwise.erase [LawfulBEq α] {l : List α} (a) : Pairwise p l → Pairwise p (l.erase a) :=
+theorem Pairwise.erase {l : List α} (a) : Pairwise p l → Pairwise p (l.erase a) :=
   Pairwise.sublist <| erase_sublist
 
 theorem Nodup.erase_eq_filter [LawfulBEq α] {l} (d : Nodup l) (a : α) : l.erase a = l.filter (· != a) := by

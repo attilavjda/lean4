@@ -1189,7 +1189,7 @@ theorem idxOf_lt_length_of_mem [BEq α] [EquivBEq α] {l : List α} (h : a ∈ l
       · exact zero_lt_succ xs.length
       · exact Nat.add_lt_add_right ih 1
 
-theorem idxOf_le_length [BEq α] [LawfulBEq α] {l : List α} {a : α} :
+theorem idxOf_le_length [BEq α] {l : List α} {a : α} :
     l.idxOf a ≤ l.length := by
   simpa [idxOf] using findIdx_le_length
 
